@@ -7,7 +7,8 @@ FuzzyVault::FuzzyVault(unsigned short vault_size, unsigned short vault_width, un
         Polynomial vault_polynomial, const std::shared_ptr<std::mt19937>& mersenne_twister_engine)
 {
     this->vault_size = vault_size;
-    this->vault_width, this->vault_height = vault_width, vault_height;
+    this->vault_width = vault_width; 
+    this->vault_height = vault_height;
     this->vault_polynomial = vault_polynomial;
     this->mersenne_twister_engine = mersenne_twister_engine;
 }
@@ -33,7 +34,7 @@ void FuzzyVault::apply_chaff()
 {
     std::vector<unsigned short> reserved_abscissas, permitted_abscissas, selected_abscissas;
     for(auto coordinate : this->vault_data) { reserved_abscissas.push_back(coordinate.abscissa); }
-    auto distribution = std::uniform_int_distribution<unsigned short>(0, this->vault_width);
+    auto ordinate_distribution = std::uniform_int_distribution<unsigned short>(0, this->vault_height);
     auto generate_permitted_abscissas = [n = 0, &reserved_abscissas] () mutable
     {
         n++;
@@ -48,7 +49,7 @@ void FuzzyVault::apply_chaff()
         bool has_found_ordinate = false; unsigned long ordinate = 0;
         while(!has_found_ordinate)
         {
-            ordinate = distribution(*this->mersenne_twister_engine);
+            ordinate = ordinate_distribution(*this->mersenne_twister_engine);
             has_found_ordinate = (ordinate != 0 && ordinate != invalid_ordinate) ? true : false;
         }
         this->vault_data.push_back(Coordinate(abscissa, ordinate));
