@@ -22,6 +22,7 @@ class Polynomial
 public:
     Polynomial(unsigned short order = 7);
     unsigned long long evaluate(long indeterminate = 1);
+    unsigned long long operator()(long indeterminate = 1);
     std::vector<unsigned short> get_coefficients();
     std::string get_coefficients_as_bit_string();
     std::string get_coefficients_as_hash();

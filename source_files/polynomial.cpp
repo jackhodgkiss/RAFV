@@ -27,6 +27,8 @@ unsigned long long Polynomial::evaluate(long indeterminate)
     return result;
 }
 
+unsigned long long Polynomial::operator()(long indeterminate) { return this->evaluate(indeterminate); }
+
 std::vector<unsigned short> Polynomial::get_coefficients() { return this->coefficients; }
 
 std::string Polynomial::get_coefficients_as_bit_string() 
