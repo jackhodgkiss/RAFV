@@ -5,6 +5,9 @@
 #include <sstream>
 #include "../header_files/picosha2.h"
 
+/**
+ * Construct a univariate polynomial with the desired order.
+ */
 Polynomial::Polynomial(unsigned short order) 
 {
     this->order = order;
@@ -18,6 +21,10 @@ Polynomial::Polynomial(unsigned short order)
     }
 }
 
+/**
+ * Evaluate the polynomial with the supplied indeterminate. This uses Horner's method of polynomial evaluation
+ * which removes the need for evaluation using exponents. See https://en.wikipedia.org/wiki/Horner%27s_method.
+ */
 unsigned long long Polynomial::evaluate(long indeterminate) 
 {
     unsigned long long result = 0;
@@ -28,10 +35,17 @@ unsigned long long Polynomial::evaluate(long indeterminate)
     return result;
 }
 
+/**
+ * See Polynomial::evaluate for implementation details. 
+ */
 unsigned long long Polynomial::operator()(long indeterminate) { return this->evaluate(indeterminate); }
 
 std::vector<unsigned short> Polynomial::get_coefficients() { return this->coefficients; }
 
+/**
+ * Obtain a representation of coefficients as a string of bits. Assumes 7 order polynomial
+ * with 16 bits per coefficient making the maximum size of the bit string 128.
+ */
 std::string Polynomial::get_coefficients_as_bit_string() 
 {
     std::bitset<128> result(*this->coefficients.begin());
@@ -43,6 +57,11 @@ std::string Polynomial::get_coefficients_as_bit_string()
     return result.to_string();
 }
 
+/**
+ * Generate a hash of the coefficients that make up the polynomial.
+ *
+ * NOTE: SHA256 implementation provided by Github user okdshin (https://github.com/okdshin/PicoSHA2)
+ */
 std::string Polynomial::get_coefficients_as_hash() 
 {
     auto coefficients_as_bit_string = this->get_coefficients_as_bit_string();
