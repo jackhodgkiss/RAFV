@@ -11,6 +11,7 @@
  */
 Polynomial::Polynomial(unsigned short order, const std::shared_ptr<std::mt19937>& mersenne_twister_engine) 
 {
+    if(mersenne_twister_engine == nullptr) return;
     this->order = order;
     auto distribution = std::uniform_int_distribution<unsigned short>(0, 65535);
     for(auto counter = 0; counter <= this->order; counter++)
