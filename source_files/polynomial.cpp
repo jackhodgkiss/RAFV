@@ -3,6 +3,7 @@
 #include <bitset>
 #include <random>
 #include <sstream>
+#include "../header_files/picosha2.h"
 
 Polynomial::Polynomial(unsigned short order) 
 {
@@ -42,7 +43,11 @@ std::string Polynomial::get_coefficients_as_bit_string()
     return result.to_string();
 }
 
-std::string Polynomial::get_coefficients_as_hash() { return std::string(); }
+std::string Polynomial::get_coefficients_as_hash() 
+{
+    auto coefficients_as_bit_string = this->get_coefficients_as_bit_string();
+    return picosha2::hash256_hex_string(coefficients_as_bit_string);
+}
 
 std::string Polynomial::to_string() 
 {
