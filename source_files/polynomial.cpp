@@ -2,12 +2,12 @@
 
 Polynomial::Polynomial(unsigned short order) { }
 
-unsigned long long evaluate(long indeterminate = 1) { }
+unsigned long long Polynomial::evaluate(long indeterminate = 1) { }
 
-std::vector<unsigned short> get_coefficients() { }
+std::vector<unsigned short> Polynomial::get_coefficients() { }
 
-std::string get_coefficients_as_bit_string() { }
+std::string Polynomial::get_coefficients_as_bit_string() { }
 
-std::string get_coefficients_as_hash() { }
+std::string Polynomial::get_coefficients_as_hash() { }
 
-std::string to_string() { }
+std::string Polynomial::to_string() { }
