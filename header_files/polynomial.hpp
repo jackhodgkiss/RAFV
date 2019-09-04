@@ -1,7 +1,9 @@
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
 
+#include <random>
 #include <string>
+#include <memory>
 #include <vector>
 
 /**
@@ -20,7 +22,7 @@ class Polynomial
     unsigned short order;
     std::vector<unsigned short> coefficients;
 public:
-    Polynomial(unsigned short order = 7);
+    Polynomial(unsigned short order = 7, const std::shared_ptr<std::mt19937>& mersenne_twister_engine = nullptr);
     unsigned long long evaluate(long indeterminate = 1);
     unsigned long long operator()(long indeterminate = 1);
     std::vector<unsigned short> get_coefficients();

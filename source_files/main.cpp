@@ -19,9 +19,6 @@ std::shared_ptr<std::mt19937> get_mersenne_twister()
 int main(int argc, char** argv) 
 {
     auto mersenne_twister = get_mersenne_twister();
-    std::uniform_int_distribution<int> uniform_distribution(0, 8192);
-    for(auto i = 0; i <= 500; i++)
-    {
-        std::cout << uniform_distribution(*mersenne_twister) << std::endl;
-    }
+    auto polynomial = Polynomial(7, mersenne_twister);
+    std::cout << polynomial.to_string() << std::endl;
 }

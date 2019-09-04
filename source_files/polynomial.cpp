@@ -6,17 +6,16 @@
 #include "../header_files/picosha2.h"
 
 /**
- * Construct a univariate polynomial with the desired order.
+ * Construct a univariate polynomial with the desired order. A mersenne twister is to be provided to allow 
+ * for determistic polynomial construction.
  */
-Polynomial::Polynomial(unsigned short order) 
+Polynomial::Polynomial(unsigned short order, const std::shared_ptr<std::mt19937>& mersenne_twister_engine) 
 {
     this->order = order;
-    std::random_device random_device;
-    std::mt19937 generator(random_device());
     auto distribution = std::uniform_int_distribution<unsigned short>(0, 65535);
     for(auto counter = 0; counter <= this->order; counter++)
     {
-        auto coefficient = distribution(generator);
+        auto coefficient = distribution(*mersenne_twister_engine);
         this->coefficients.push_back(coefficient);
     }
 }
