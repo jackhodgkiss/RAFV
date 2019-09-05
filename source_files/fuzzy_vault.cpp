@@ -3,6 +3,9 @@
 #include <iostream>
 #include <algorithm>
 
+/**
+ * Construct a fuzzy vault with the supplied arguments. 
+ */
 FuzzyVault::FuzzyVault(unsigned short vault_size, unsigned short vault_width, unsigned short vault_height, 
         Polynomial vault_polynomial, const std::shared_ptr<std::mt19937>& mersenne_twister_engine)
 {
@@ -13,6 +16,10 @@ FuzzyVault::FuzzyVault(unsigned short vault_size, unsigned short vault_width, un
     this->mersenne_twister_engine = mersenne_twister_engine;
 }
 
+/**
+ * Lock the vault with the desired locking elements. This will do the following; project elements, apply chaff 
+ * points, order the vault. 
+ */
 std::vector<Coordinate> FuzzyVault::lock_vault(const std::vector<unsigned short>& locking_elements)
 {
     this->project_elements(locking_elements);
@@ -21,6 +28,9 @@ std::vector<Coordinate> FuzzyVault::lock_vault(const std::vector<unsigned short>
     return this->vault_data;
 }
 
+/**
+ * Project the elements as provided by the user locking the vault.
+ */ 
 void FuzzyVault::project_elements(const std::vector<unsigned short>& locking_elements)
 {
     for(auto abscissa : locking_elements)
@@ -30,6 +40,12 @@ void FuzzyVault::project_elements(const std::vector<unsigned short>& locking_ele
     }
 }
 
+/**
+ * In order to conceal the polynomial chaff points must be added to the vault in order to prevent the adversary from 
+ * simply reconstructing the polynomial with the points contained within. This process works by excluding of locking 
+ * element points from being candidate chaff points. Then a sample is taken ensuring if a point is choosen it is only 
+ * chosen once. Then each candidate abscissa is combined with a random ordinate that must not equal P(abcissa)
+ */
 void FuzzyVault::apply_chaff()
 {
     std::vector<unsigned short> reserved_abscissas, permitted_abscissas(this->vault_width), selected_abscissas;
@@ -60,6 +76,12 @@ void FuzzyVault::apply_chaff()
     }
 }
 
+/**
+ * The vault is ordered to ensure that the adversary can not simply use the first n elements to reconstruct the 
+ * polynomial. This is because they would be the locking elements that would allow for polynomial reconstruction. 
+ * The vault is ordered by abscissa smallest to largest. Ordinates are not compared as there should only be one point 
+ * at most for each abscissa within the vault. 
+ */
 void FuzzyVault::order_vault() 
 {
     std::sort(this->vault_data.begin(), this->vault_data.end(), [](Coordinate left, Coordinate right) {
