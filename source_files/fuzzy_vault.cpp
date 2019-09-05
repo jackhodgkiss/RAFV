@@ -57,4 +57,9 @@ void FuzzyVault::apply_chaff()
     }
 }
 
-void FuzzyVault::order_vault() { }
+void FuzzyVault::order_vault() 
+{
+    std::sort(this->vault_data.begin(), this->vault_data.end(), [](Coordinate left, Coordinate right) {
+        return left.abscissa < right.abscissa;
+    });
+}
