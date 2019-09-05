@@ -43,7 +43,9 @@ void FuzzyVault::apply_chaff()
     };
     std::generate(permitted_abscissas.begin(), permitted_abscissas.end(), generate_permitted_abscissas);
     std::sample(permitted_abscissas.begin(), permitted_abscissas.end(), std::back_inserter(selected_abscissas), 
-        this->vault_size - reserved_abscissas.size(), *this->mersenne_twister_engine);
+        this->vault_size, *this->mersenne_twister_engine);
+    selected_abscissas.erase(std::remove(selected_abscissas.begin(), selected_abscissas.end(), 0), selected_abscissas.end());
+    selected_abscissas.shrink_to_fit();
     for(auto abscissa : selected_abscissas)
     {
         unsigned short invalid_ordinate = this->vault_polynomial(abscissa) % this->vault_height;
@@ -54,6 +56,7 @@ void FuzzyVault::apply_chaff()
             has_found_ordinate = (ordinate != 0 && ordinate != invalid_ordinate) ? true : false;
         }
         this->vault_data.push_back(Coordinate(abscissa, ordinate));
+        if(this->vault_data.size() >= this->vault_size) break;
     }
 }
 
