@@ -32,7 +32,7 @@ void FuzzyVault::project_elements(const std::vector<unsigned short>& locking_ele
 
 void FuzzyVault::apply_chaff()
 {
-    std::vector<unsigned short> reserved_abscissas, permitted_abscissas, selected_abscissas;
+    std::vector<unsigned short> reserved_abscissas, permitted_abscissas(this->vault_width), selected_abscissas;
     for(auto coordinate : this->vault_data) { reserved_abscissas.push_back(coordinate.abscissa); }
     auto ordinate_distribution = std::uniform_int_distribution<unsigned short>(0, this->vault_height);
     auto generate_permitted_abscissas = [n = 0, &reserved_abscissas] () mutable
@@ -42,7 +42,8 @@ void FuzzyVault::apply_chaff()
         return find_result != std::end(reserved_abscissas) ? 0 : n;
     };
     std::generate(permitted_abscissas.begin(), permitted_abscissas.end(), generate_permitted_abscissas);
-    selected_abscissas = {23, 69, 7045, 303};
+    std::sample(permitted_abscissas.begin(), permitted_abscissas.end(), std::back_inserter(selected_abscissas), 
+        this->vault_size - reserved_abscissas.size(), *this->mersenne_twister_engine);
     for(auto abscissa : selected_abscissas)
     {
         unsigned short invalid_ordinate = this->vault_polynomial(abscissa) % this->vault_height;
