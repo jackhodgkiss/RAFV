@@ -2,17 +2,19 @@
 #define QUAD_TREE_H
 
 #include <vector>
+#include "quadrant.hpp"
 #include "fuzzy_vault.hpp"
 
 class QuadTree
 {
+    Quadrant root;
     std::vector<Coordinate>& vault_data;
     unsigned short width;
     unsigned short height;
-    unsigned short number_of_layers;
+    unsigned short max_level;
 public:
     QuadTree(unsigned short width, unsigned short height, 
-        unsigned short number_of_layers, std::vector<Coordinate>& vault_data);
+        unsigned short max_level, std::vector<Coordinate>& vault_data);
 };
 
 #endif

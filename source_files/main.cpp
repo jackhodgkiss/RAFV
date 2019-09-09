@@ -27,6 +27,6 @@ int main(int argc, char** argv)
     auto unlocked_polynomial = rotational_vault.unlock_vault(vault, {302, 4049, 403, 2002});
     for(auto coordinate : vault)
     {
-        std::cout << coordinate.abscissa << ", " << coordinate.ordinate << std::endl;
+        //std::cout << coordinate.abscissa << ", " << coordinate.ordinate << std::endl;
     }
 }
