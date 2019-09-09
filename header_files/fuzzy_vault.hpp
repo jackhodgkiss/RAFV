@@ -25,11 +25,12 @@ struct Coordinate
  */
 class FuzzyVault
 {
-    std::vector<Coordinate> vault_data;
     unsigned short vault_size;
-    unsigned short vault_width, vault_height;
     Polynomial vault_polynomial;
     std::shared_ptr<std::mt19937> mersenne_twister_engine;
+protected:
+    std::vector<Coordinate> vault_data;
+    unsigned short vault_width, vault_height;
     void project_elements(const std::vector<unsigned short>& locking_elements);
     void apply_chaff();
     void order_vault();
