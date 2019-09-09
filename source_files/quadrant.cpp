@@ -7,7 +7,6 @@ Quadrant::Quadrant(unsigned short abscissa, unsigned short ordinate, unsigned sh
         : abscissa(abscissa), ordinate(ordinate), width(width), height(height), 
         level(level), max_level(max_level), vault_data(vault_data)
 {
-    std::cout << this->level << std::endl;
     this->divide();
 }
 

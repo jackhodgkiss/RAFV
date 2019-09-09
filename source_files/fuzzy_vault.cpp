@@ -16,6 +16,8 @@ FuzzyVault::FuzzyVault(unsigned short vault_size, unsigned short vault_width, un
     this->mersenne_twister_engine = mersenne_twister_engine;
 }
 
+FuzzyVault::FuzzyVault() { }
+
 /**
  * Lock the vault with the desired locking elements. This will do the following; project elements, apply chaff 
  * points, order the vault. 

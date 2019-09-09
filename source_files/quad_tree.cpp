@@ -7,4 +7,5 @@ QuadTree::QuadTree(unsigned short width, unsigned short height,
     : width(width), height(height), max_level(max_level), vault_data(vault_data), 
     root(0, 0, width, height, 0, max_level, vault_data)
 {
+    std::cout << this->vault_data.size() << std::endl;
 }

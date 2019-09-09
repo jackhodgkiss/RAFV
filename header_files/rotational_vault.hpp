@@ -7,7 +7,6 @@
 
 class RotationalVault : public FuzzyVault
 {
-    QuadTree quad_tree;
 public:
     RotationalVault();
     RotationalVault(unsigned short vault_size, unsigned short vault_width, unsigned short vault_height, 

@@ -24,7 +24,8 @@ int main(int argc, char** argv)
     auto polynomial = Polynomial(7, mersenne_twister);
     auto rotational_vault = RotationalVault(5000, 8192, 8192, polynomial, mersenne_twister);
     auto vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476});
-    auto unlocked_polynomial = rotational_vault.unlock_vault(vault, {302, 4049, 403, 2002});
+    
+    auto unlocked_polynomial = RotationalVault().unlock_vault(vault, {3949, 232, 595, 5943});
     for(auto coordinate : vault)
     {
         //std::cout << coordinate.abscissa << ", " << coordinate.ordinate << std::endl;
