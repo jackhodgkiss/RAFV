@@ -28,6 +28,11 @@ std::vector<Coordinate> FuzzyVault::lock_vault(const std::vector<unsigned short>
     return this->vault_data;
 }
 
+Polynomial FuzzyVault::unlock_vault(std::vector<Coordinate> vault_data, const std::vector<unsigned short>& unlocking_elements)
+{
+    return Polynomial();
+}
+
 /**
  * Project the elements as provided by the user locking the vault.
  */ 
