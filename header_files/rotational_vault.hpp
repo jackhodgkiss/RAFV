@@ -2,6 +2,7 @@
 #define ROTATIONAL_VAULT_H
 
 #include "quad_tree.hpp"
+#include "coordinate.hpp"
 #include "fuzzy_vault.hpp"
 
 class RotationalVault : public FuzzyVault
