@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../header_files/polynomial.hpp"
 #include "../header_files/fuzzy_vault.hpp"
+#include "../header_files/rotational_vault.hpp"
 
 /**
  * Generate a mersenne twister that has been seeded using a sequence 32 integers. The mersenne twister 
@@ -21,10 +22,10 @@ int main(int argc, char** argv)
 {
     auto mersenne_twister = get_mersenne_twister();
     auto polynomial = Polynomial(7, mersenne_twister);
-    auto fuzzy_vault = FuzzyVault(5000, 8192, 8192, polynomial, mersenne_twister);
-    auto vault = fuzzy_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476});
+    auto rotational_vault = RotationalVault(5000, 8192, 8192, polynomial, mersenne_twister);
+    auto vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476});
     for(auto coordinate : vault)
     {
-        std::cout << coordinate.abscissa << ", " << coordinate.ordinate << std::endl;
+        //std::cout << coordinate.abscissa << ", " << coordinate.ordinate << std::endl;
     }
 }
