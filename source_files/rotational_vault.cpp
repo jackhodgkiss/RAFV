@@ -1,6 +1,7 @@
 #include "../header_files/rotational_vault.hpp"
 
 #include <iostream>
+#include <algorithm>
 
 /**
  * Construct a fuzzy vault with the supplied arguments. 
@@ -47,7 +48,7 @@ std::vector<Coordinate> RotationalVault::lock_vault(const std::vector<unsigned s
 {
     FuzzyVault::lock_vault(locking_elements);
     auto quad_tree = QuadTree(this->vault_width, this->vault_height, 3, this->vault_data);
-    std::cout << this->vault_to_hash() << std::endl;
+    this->rotate_vault(quad_tree, rotation_pattern);
     return this->vault_data;
 }
 
