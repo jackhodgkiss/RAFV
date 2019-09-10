@@ -16,6 +16,7 @@ class QuadTree
 public:
     QuadTree(unsigned short width, unsigned short height, 
         unsigned short max_level, std::vector<Coordinate>& vault_data);
+    std::vector<int> get_occupants(int index);
 };
 
 #endif
