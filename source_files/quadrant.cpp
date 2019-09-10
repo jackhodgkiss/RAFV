@@ -3,11 +3,20 @@
 #include <iostream>
 
 Quadrant::Quadrant(unsigned short abscissa, unsigned short ordinate, unsigned short width, 
-        unsigned short height, unsigned short level, unsigned short max_level, std::vector<Coordinate>& vault_data) 
+        unsigned short height, unsigned short level, unsigned short max_level, std::vector<Coordinate>& vault_data, 
+        std::vector<std::shared_ptr<Quadrant>>& tree_map) 
         : abscissa(abscissa), ordinate(ordinate), width(width), height(height), 
-        level(level), max_level(max_level), vault_data(vault_data)
+        level(level), max_level(max_level), vault_data(vault_data), tree_map(tree_map)
 {
     this->divide();
+    if(this->south_east != nullptr)
+    {
+        this->tree_map.push_back(this->south_east);
+        this->tree_map.push_back(this->south_west);
+        this->tree_map.push_back(this->north_east);
+        this->tree_map.push_back(this->north_west);
+
+    }
 }
 
 void Quadrant::divide()
@@ -23,7 +32,7 @@ void Quadrant::divide()
             unsigned short quadrant_abscissa = column * quadrant_width;
             unsigned short quadrant_ordinate = row * quadrant_height;
             auto child_quadrant = std::make_shared<Quadrant>(quadrant_abscissa, quadrant_ordinate, quadrant_width, 
-                quadrant_height, this->level + 1, this->max_level, this->vault_data);
+                quadrant_height, this->level + 1, this->max_level, this->vault_data, this->tree_map);
             if(counter == 0)
                 this->south_west = child_quadrant;
             else if(counter == 1)
