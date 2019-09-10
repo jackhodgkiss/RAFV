@@ -1,0 +1,340 @@
+Abscissa: 1024 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 1024
+121, 2371 False
+Abscissa: 0 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 1024
+121, 2371 False
+Abscissa: 1024 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 2048
+121, 2371 False
+Abscissa: 0 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 2048
+121, 2371 False
+Abscissa: 3072 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 1024
+121, 2371 False
+Abscissa: 2048 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 1024
+121, 2371 False
+Abscissa: 3072 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 2048
+121, 2371 False
+Abscissa: 2048 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 2048
+121, 2371 False
+Abscissa: 1024 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 3072
+121, 2371 False
+Abscissa: 0 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 3072
+121, 2371 True
+Abscissa: 1024 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 4096
+121, 2371 False
+Abscissa: 0 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 4096
+121, 2371 False
+Abscissa: 3072 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 3072
+121, 2371 False
+Abscissa: 2048 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 3072
+121, 2371 False
+Abscissa: 3072 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 4096
+121, 2371 False
+Abscissa: 2048 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 4096
+121, 2371 False
+Abscissa: 2048 Ordinate: 0
+Width: 2048 Height: 2048
+End Abscissa: 4096 End Ordinate: 2048
+121, 2371 False
+Abscissa: 0 Ordinate: 0
+Width: 2048 Height: 2048
+End Abscissa: 2048 End Ordinate: 2048
+121, 2371 False
+Abscissa: 2048 Ordinate: 2048
+Width: 2048 Height: 2048
+End Abscissa: 4096 End Ordinate: 4096
+121, 2371 False
+Abscissa: 0 Ordinate: 2048
+Width: 2048 Height: 2048
+End Abscissa: 2048 End Ordinate: 4096
+121, 2371 True
+Abscissa: 5120 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 1024
+121, 2371 False
+Abscissa: 4096 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 1024
+121, 2371 False
+Abscissa: 5120 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 2048
+121, 2371 False
+Abscissa: 4096 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 2048
+121, 2371 False
+Abscissa: 7168 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 1024
+121, 2371 False
+Abscissa: 6144 Ordinate: 0
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 1024
+121, 2371 False
+Abscissa: 7168 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 2048
+121, 2371 False
+Abscissa: 6144 Ordinate: 1024
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 2048
+121, 2371 False
+Abscissa: 5120 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 3072
+121, 2371 False
+Abscissa: 4096 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 3072
+121, 2371 False
+Abscissa: 5120 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 4096
+121, 2371 False
+Abscissa: 4096 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 4096
+121, 2371 False
+Abscissa: 7168 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 3072
+121, 2371 False
+Abscissa: 6144 Ordinate: 2048
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 3072
+121, 2371 False
+Abscissa: 7168 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 4096
+121, 2371 False
+Abscissa: 6144 Ordinate: 3072
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 4096
+121, 2371 False
+Abscissa: 6144 Ordinate: 0
+Width: 2048 Height: 2048
+End Abscissa: 8192 End Ordinate: 2048
+121, 2371 False
+Abscissa: 4096 Ordinate: 0
+Width: 2048 Height: 2048
+End Abscissa: 6144 End Ordinate: 2048
+121, 2371 False
+Abscissa: 6144 Ordinate: 2048
+Width: 2048 Height: 2048
+End Abscissa: 8192 End Ordinate: 4096
+121, 2371 False
+Abscissa: 4096 Ordinate: 2048
+Width: 2048 Height: 2048
+End Abscissa: 6144 End Ordinate: 4096
+121, 2371 False
+Abscissa: 1024 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 5120
+121, 2371 False
+Abscissa: 0 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 5120
+121, 2371 False
+Abscissa: 1024 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 6144
+121, 2371 False
+Abscissa: 0 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 6144
+121, 2371 False
+Abscissa: 3072 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 5120
+121, 2371 False
+Abscissa: 2048 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 5120
+121, 2371 False
+Abscissa: 3072 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 6144
+121, 2371 False
+Abscissa: 2048 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 6144
+121, 2371 False
+Abscissa: 1024 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 7168
+121, 2371 False
+Abscissa: 0 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 7168
+121, 2371 False
+Abscissa: 1024 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 2048 End Ordinate: 8192
+121, 2371 False
+Abscissa: 0 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 1024 End Ordinate: 8192
+121, 2371 False
+Abscissa: 3072 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 7168
+121, 2371 False
+Abscissa: 2048 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 7168
+121, 2371 False
+Abscissa: 3072 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 4096 End Ordinate: 8192
+121, 2371 False
+Abscissa: 2048 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 3072 End Ordinate: 8192
+121, 2371 False
+Abscissa: 2048 Ordinate: 4096
+Width: 2048 Height: 2048
+End Abscissa: 4096 End Ordinate: 6144
+121, 2371 False
+Abscissa: 0 Ordinate: 4096
+Width: 2048 Height: 2048
+End Abscissa: 2048 End Ordinate: 6144
+121, 2371 False
+Abscissa: 2048 Ordinate: 6144
+Width: 2048 Height: 2048
+End Abscissa: 4096 End Ordinate: 8192
+121, 2371 False
+Abscissa: 0 Ordinate: 6144
+Width: 2048 Height: 2048
+End Abscissa: 2048 End Ordinate: 8192
+121, 2371 False
+Abscissa: 5120 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 5120
+121, 2371 False
+Abscissa: 4096 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 5120
+121, 2371 False
+Abscissa: 5120 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 6144
+121, 2371 False
+Abscissa: 4096 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 6144
+121, 2371 False
+Abscissa: 7168 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 5120
+121, 2371 False
+Abscissa: 6144 Ordinate: 4096
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 5120
+121, 2371 False
+Abscissa: 7168 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 6144
+121, 2371 False
+Abscissa: 6144 Ordinate: 5120
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 6144
+121, 2371 False
+Abscissa: 5120 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 7168
+121, 2371 False
+Abscissa: 4096 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 7168
+121, 2371 False
+Abscissa: 5120 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 6144 End Ordinate: 8192
+121, 2371 False
+Abscissa: 4096 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 5120 End Ordinate: 8192
+121, 2371 False
+Abscissa: 7168 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 7168
+121, 2371 False
+Abscissa: 6144 Ordinate: 6144
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 7168
+121, 2371 False
+Abscissa: 7168 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 8192 End Ordinate: 8192
+121, 2371 False
+Abscissa: 6144 Ordinate: 7168
+Width: 1024 Height: 1024
+End Abscissa: 7168 End Ordinate: 8192
+121, 2371 False
+Abscissa: 6144 Ordinate: 4096
+Width: 2048 Height: 2048
+End Abscissa: 8192 End Ordinate: 6144
+121, 2371 False
+Abscissa: 4096 Ordinate: 4096
+Width: 2048 Height: 2048
+End Abscissa: 6144 End Ordinate: 6144
+121, 2371 False
+Abscissa: 6144 Ordinate: 6144
+Width: 2048 Height: 2048
+End Abscissa: 8192 End Ordinate: 8192
+121, 2371 False
+Abscissa: 4096 Ordinate: 6144
+Width: 2048 Height: 2048
+End Abscissa: 6144 End Ordinate: 8192
+121, 2371 False
+Abscissa: 4096 Ordinate: 0
+Width: 4096 Height: 4096
+End Abscissa: 8192 End Ordinate: 4096
+121, 2371 False
+Abscissa: 0 Ordinate: 0
+Width: 4096 Height: 4096
+End Abscissa: 4096 End Ordinate: 4096
+121, 2371 True
+Abscissa: 4096 Ordinate: 4096
+Width: 4096 Height: 4096
+End Abscissa: 8192 End Ordinate: 8192
+121, 2371 False
+Abscissa: 0 Ordinate: 4096
+Width: 4096 Height: 4096
+End Abscissa: 4096 End Ordinate: 8192
+121, 2371 False
+Abscissa: 0 Ordinate: 0
+Width: 8192 Height: 8192
+End Abscissa: 8192 End Ordinate: 8192
+121, 2371 True

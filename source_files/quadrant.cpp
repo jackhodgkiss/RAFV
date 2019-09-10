@@ -57,7 +57,8 @@ void Quadrant::get_occupants()
         else
             return false;        
     };
-    std::cout << this->to_string() << this->vault_data[0].abscissa << ", " << this->vault_data[1].ordinate << " " <<  (is_in_boundaries(this->vault_data[0]) ? "True" : "False") << std::endl;
+    unsigned short index = 67;
+    std::cout << this->to_string() << this->vault_data[index].abscissa << ", " << this->vault_data[index].ordinate << " " <<  (is_in_boundaries(this->vault_data[index]) ? "True" : "False") << std::endl;
 }
 
 std::string Quadrant::to_string() 
