@@ -8,7 +8,7 @@
 class QuadTree
 {
     std::vector<std::shared_ptr<Quadrant>> tree_map;
-    Quadrant root;
+    std::shared_ptr<Quadrant> root;
     std::vector<Coordinate>& vault_data;
     unsigned short width;
     unsigned short height;
