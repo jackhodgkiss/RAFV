@@ -19,13 +19,25 @@ std::shared_ptr<std::mt19937> get_mersenne_twister()
     return std::make_shared<std::mt19937>(seed_sequence);
 }
 
+std::vector<std::pair<int, bool>> generate_rotation_pattern(int pattern_length, int quadrant_count, std::shared_ptr<std::mt19937> mersenne_twister)
+{
+    std::vector<std::pair<int, bool>> result;
+    auto quadrant_distribution = std::uniform_int_distribution<unsigned short>(0, quadrant_count);
+    auto direction_distribution = std::uniform_int_distribution<unsigned short>(0, 2);
+    for(auto counter = 0; counter < pattern_length; counter++)
+    {
+        auto pair = std::pair<int, bool>(quadrant_distribution(*mersenne_twister), 
+            (direction_distribution(*mersenne_twister) == 0 ? true : false));
+        result.push_back(pair);
+    }
+    return result;
+}
+
 int main(int argc, char** argv) 
 {
     auto mersenne_twister = get_mersenne_twister();
     auto polynomial = Polynomial(7, mersenne_twister);
     auto rotational_vault = RotationalVault(5000, 8192, 8192, polynomial, mersenne_twister);
-    std::vector<std::pair<int, bool>> rotation_pattern = {std::pair<int, bool>(0, true)};
+    auto rotation_pattern = generate_rotation_pattern(32, 84, mersenne_twister);
     auto vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476}, rotation_pattern);
-    std::reverse(rotation_pattern.begin(), rotation_pattern.end());
-    auto unlocked_polynomial = RotationalVault().unlock_vault(vault, {3949, 232, 595, 5943}, rotation_pattern);
 }
