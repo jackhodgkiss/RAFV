@@ -15,3 +15,8 @@ std::vector<int> QuadTree::get_occupants(int index)
 {
     return this->tree_map.at(index)->get_occupants();
 }
+
+Coordinate QuadTree::get_center(int index)
+{
+    return this->tree_map.at(index)->center;
+}

@@ -22,6 +22,7 @@ public:
     unsigned short ordinate;
     unsigned short width;
     unsigned short height;
+    Coordinate center;
     unsigned short level;
     unsigned short max_level;
     std::vector<int> get_occupants();

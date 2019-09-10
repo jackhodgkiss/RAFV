@@ -1,6 +1,7 @@
 #include <memory>
 #include <random>
 #include <iostream>
+#include <algorithm>
 #include "../header_files/polynomial.hpp"
 #include "../header_files/fuzzy_vault.hpp"
 #include "../header_files/rotational_vault.hpp"
@@ -23,6 +24,8 @@ int main(int argc, char** argv)
     auto mersenne_twister = get_mersenne_twister();
     auto polynomial = Polynomial(7, mersenne_twister);
     auto rotational_vault = RotationalVault(5000, 8192, 8192, polynomial, mersenne_twister);
-    auto vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476});
-    auto unlocked_polynomial = RotationalVault().unlock_vault(vault, {3949, 232, 595, 5943});
+    std::vector<std::pair<int, bool>> rotation_pattern = {std::pair<int, bool>(0, true)};
+    auto vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476}, rotation_pattern);
+    std::reverse(rotation_pattern.begin(), rotation_pattern.end());
+    auto unlocked_polynomial = RotationalVault().unlock_vault(vault, {3949, 232, 595, 5943}, rotation_pattern);
 }

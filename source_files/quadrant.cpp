@@ -8,7 +8,8 @@ Quadrant::Quadrant(unsigned short abscissa, unsigned short ordinate, unsigned sh
         unsigned short height, unsigned short level, unsigned short max_level, std::vector<Coordinate>& vault_data, 
         std::vector<std::shared_ptr<Quadrant>>& tree_map) 
         : abscissa(abscissa), ordinate(ordinate), width(width), height(height), 
-        level(level), max_level(max_level), vault_data(vault_data), tree_map(tree_map)
+        level(level), max_level(max_level), vault_data(vault_data), tree_map(tree_map),
+        center(this->abscissa + (this->width / 2), this->ordinate + (this->height / 2))
 {
     this->divide();
     if(this->south_east != nullptr)

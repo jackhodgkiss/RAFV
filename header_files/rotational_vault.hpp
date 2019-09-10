@@ -7,8 +7,8 @@
 
 class RotationalVault : public FuzzyVault
 {
-    void rotate_vault(std::vector<std::pair<int, bool>> rotation_pattern);
-    void rotate_point(int index, bool clockwise_direction);
+    void rotate_vault(QuadTree quad_tree, std::vector<std::pair<int, bool>> rotation_pattern);
+    void rotate_point(int index, bool clockwise_direction, Coordinate center);
 public:
     RotationalVault();
     RotationalVault(unsigned short vault_size, unsigned short vault_width, unsigned short vault_height, 
