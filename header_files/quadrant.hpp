@@ -25,6 +25,7 @@ public:
     unsigned short level;
     unsigned short max_level;
     void get_occupants();
+    std::string to_string();
 };
 
 #endif

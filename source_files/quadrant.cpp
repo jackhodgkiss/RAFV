@@ -1,5 +1,6 @@
 #include "../header_files/quadrant.hpp"
 
+#include <sstream>
 #include <iostream>
 
 Quadrant::Quadrant(unsigned short abscissa, unsigned short ordinate, unsigned short width, 
@@ -56,5 +57,14 @@ void Quadrant::get_occupants()
         else
             return false;        
     };
-    std::cout << this->abscissa << ", " << this->ordinate << " " << this->abscissa + this->width << ", " << this->height << "\n" << this->vault_data[0].abscissa << ", " << this->vault_data[1].ordinate << " " <<  (is_in_boundaries(this->vault_data[0]) ? "True" : "False") << std::endl;
+    std::cout << this->to_string() << this->vault_data[0].abscissa << ", " << this->vault_data[1].ordinate << " " <<  (is_in_boundaries(this->vault_data[0]) ? "True" : "False") << std::endl;
+}
+
+std::string Quadrant::to_string() 
+{
+    std::stringstream result;
+    result << "Abscissa: " << this->abscissa << " Ordinate: " << this->ordinate << "\n";
+    result << "Width: " << this->width << " Height: " << this->height << "\n";
+    result << "End Abscissa: " << this->abscissa + this->width << " End Ordinate: " << this->ordinate + height << "\n";
+    return result.str();
 }
