@@ -29,6 +29,7 @@ public:
         Polynomial vault_polynomial, const std::shared_ptr<std::mt19937>& mersenne_twister_engine = nullptr);
     std::vector<Coordinate> lock_vault(const std::vector<unsigned short>& locking_elements);
     Polynomial unlock_vault(std::vector<Coordinate> vault_data, const std::vector<unsigned short>& unlocking_elements);
+    std::string vault_to_hash();
 };
 
 #endif

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include "../header_files/picosha2.h"
 
 /**
  * Construct a fuzzy vault with the supplied arguments. 
@@ -94,4 +95,11 @@ void FuzzyVault::order_vault()
     std::sort(this->vault_data.begin(), this->vault_data.end(), [](Coordinate left, Coordinate right) {
         return left.abscissa < right.abscissa;
     });
+}
+
+std::string FuzzyVault::vault_to_hash()
+{
+    std::string hash;
+    picosha2::hash256_hex_string(this->vault_data, hash);
+    return hash;
 }

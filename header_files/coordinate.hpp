@@ -11,6 +11,7 @@ struct Coordinate
     { 
         this->abscissa = abscissa, this->ordinate = ordinate;
     }
+    operator unsigned int() const { return abscissa + ordinate; }
 };
 
 #endif
