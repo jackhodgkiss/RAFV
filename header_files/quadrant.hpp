@@ -24,7 +24,7 @@ public:
     unsigned short height;
     unsigned short level;
     unsigned short max_level;
-    void get_occupants();
+    std::vector<int> get_occupants();
     std::string to_string();
 };
 

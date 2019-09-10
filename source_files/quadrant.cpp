@@ -2,6 +2,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 
 Quadrant::Quadrant(unsigned short abscissa, unsigned short ordinate, unsigned short width, 
         unsigned short height, unsigned short level, unsigned short max_level, std::vector<Coordinate>& vault_data, 
@@ -12,11 +13,10 @@ Quadrant::Quadrant(unsigned short abscissa, unsigned short ordinate, unsigned sh
     this->divide();
     if(this->south_east != nullptr)
     {
-        this->tree_map.push_back(this->south_east);
         this->tree_map.push_back(this->south_west);
+        this->tree_map.push_back(this->south_east);
         this->tree_map.push_back(this->north_east);
         this->tree_map.push_back(this->north_west);
-
     }
 }
 
@@ -46,19 +46,29 @@ void Quadrant::divide()
     }
 }
 
-void Quadrant::get_occupants()
+std::vector<int> Quadrant::get_occupants()
 {
+    auto result = std::vector<int>();
     auto is_in_boundaries = [&] (Coordinate& coordinate) -> bool
     {
         auto coordinate_abscissa = coordinate.abscissa; auto coordinate_ordinate = coordinate.ordinate;
-        if(this->abscissa < coordinate_abscissa && this->ordinate + this->width > coordinate_abscissa 
+        if(this->abscissa < coordinate_abscissa && this->abscissa + this->width > coordinate_abscissa 
         && this->ordinate  < coordinate_ordinate && this->ordinate + this->height > coordinate_ordinate)
             return true;
         else
-            return false;        
+            return false;   
     };
-    unsigned short index = 67;
-    std::cout << this->to_string() << this->vault_data[index].abscissa << ", " << this->vault_data[index].ordinate << " " <<  (is_in_boundaries(this->vault_data[index]) ? "True" : "False") << std::endl;
+    auto vault_iterator = this->vault_data.begin();
+    while(vault_iterator != this->vault_data.end())
+    {
+        vault_iterator = std::find_if(vault_iterator, this->vault_data.end(), is_in_boundaries);
+        if(vault_iterator != this->vault_data.end())
+        {
+            result.push_back(std::distance(this->vault_data.begin(), vault_iterator));
+            vault_iterator++;
+        }
+    }
+    return result;
 }
 
 std::string Quadrant::to_string() 
