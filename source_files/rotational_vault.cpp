@@ -13,14 +13,16 @@ RotationalVault::RotationalVault(unsigned short vault_size, unsigned short vault
 
 RotationalVault::RotationalVault()  {}
 
-std::vector<Coordinate> RotationalVault::lock_vault(const std::vector<unsigned short>& locking_elements)
+std::vector<Coordinate> RotationalVault::lock_vault(const std::vector<unsigned short>& locking_elements, 
+    std::vector<std::pair<int, bool>> rotation_pattern)
 {
     FuzzyVault::lock_vault(locking_elements);
     auto quad_tree = QuadTree(this->vault_width, this->vault_height, 3, this->vault_data);
     return this->vault_data;
 }
 
-Polynomial RotationalVault::unlock_vault(std::vector<Coordinate> vault_data, const std::vector<unsigned short>& unlocking_elements)
+Polynomial RotationalVault::unlock_vault(std::vector<Coordinate> vault_data, 
+    const std::vector<unsigned short>& unlocking_elements, std::vector<std::pair<int, bool>> rotation_pattern)
 {
     return FuzzyVault::unlock_vault(vault_data, unlocking_elements);
 }
