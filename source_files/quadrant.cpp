@@ -29,8 +29,8 @@ void Quadrant::divide()
         {
             unsigned short row = counter / 2;
             unsigned short column = counter % 2;
-            unsigned short quadrant_abscissa = column * quadrant_width;
-            unsigned short quadrant_ordinate = row * quadrant_height;
+            unsigned short quadrant_abscissa = this->abscissa + column * quadrant_width;
+            unsigned short quadrant_ordinate = this->ordinate + row * quadrant_height;
             auto child_quadrant = std::make_shared<Quadrant>(quadrant_abscissa, quadrant_ordinate, quadrant_width, 
                 quadrant_height, this->level + 1, this->max_level, this->vault_data, this->tree_map);
             if(counter == 0)
