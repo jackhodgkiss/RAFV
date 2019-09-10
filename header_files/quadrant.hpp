@@ -24,6 +24,7 @@ public:
     unsigned short height;
     unsigned short level;
     unsigned short max_level;
+    void get_occupants();
 };
 
 #endif

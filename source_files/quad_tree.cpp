@@ -9,8 +9,8 @@ QuadTree::QuadTree(unsigned short width, unsigned short height,
     this->root = std::make_shared<Quadrant>(0, 0, this->width, this->height, 
         0, this->max_level, this->vault_data, this->tree_map);
     this->tree_map.push_back(root);
-    for(auto quadrant : this->tree_map)
-    {
-        std::cout << std::addressof(*quadrant.get()) << std::endl;
-    }
+    this->tree_map.at(0)->get_occupants();
+    this->tree_map.at(32)->get_occupants();
+    this->tree_map.at(16)->get_occupants();   
+    this->tree_map.at(84)->get_occupants();
 }

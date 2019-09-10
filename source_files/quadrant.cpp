@@ -44,3 +44,17 @@ void Quadrant::divide()
         }
     }
 }
+
+void Quadrant::get_occupants()
+{
+    auto is_in_boundaries = [&] (Coordinate& coordinate) -> bool
+    {
+        auto coordinate_abscissa = coordinate.abscissa; auto coordinate_ordinate = coordinate.ordinate;
+        if(this->abscissa < coordinate_abscissa && this->ordinate + this->width > coordinate_abscissa 
+        && this->ordinate  < coordinate_ordinate && this->ordinate + this->height > coordinate_ordinate)
+            return true;
+        else
+            return false;        
+    };
+    std::cout << this->abscissa << ", " << this->ordinate << " " << this->abscissa + this->width << ", " << this->height << "\n" << this->vault_data[0].abscissa << ", " << this->vault_data[1].ordinate << " " <<  (is_in_boundaries(this->vault_data[0]) ? "True" : "False") << std::endl;
+}
