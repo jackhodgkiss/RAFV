@@ -1,6 +1,7 @@
 #include <memory>
 #include <random>
 #include <chrono>
+#include <stdlib.h>
 #include <iostream>
 #include <algorithm>
 #include "../header_files/polynomial.hpp"
@@ -36,12 +37,22 @@ std::vector<std::pair<int, bool>> generate_rotation_pattern(int pattern_length, 
 
 int main(int argc, char** argv) 
 {
+    unsigned int runs = 100000;
     auto mersenne_twister = get_mersenne_twister();
+    unsigned short vault_size = strtol(argv[1], nullptr, 10);
+    unsigned short max_layer = strtol(argv[2], nullptr, 10);
+    unsigned short rotation_count = strtol(argv[3], nullptr, 10);
+    auto calculate_total_quadrants = [] (unsigned short max_layer) 
+    {
+        unsigned short result;
+        for(auto n = max_layer; n > 0; n--)
+        {
+            result += std::pow(4, n);
+        }
+        return result;
+    };
     auto polynomial = Polynomial(7, mersenne_twister);
-    auto rotation_pattern = generate_rotation_pattern(16, 340, mersenne_twister);
-    int vault_size = 5000;
-    int max_layer = 4;
-    int runs = 100000;
+    auto rotation_pattern = generate_rotation_pattern(rotation_count, calculate_total_quadrants(max_layer), mersenne_twister);
     for(auto counter = 0; counter < runs; counter++)
     {
         auto start = std::chrono::system_clock::now();
@@ -58,6 +69,4 @@ int main(int argc, char** argv)
         elapsed_seconds = end - start;
         std::cout << ", " << elapsed_seconds.count() << std::endl;
     }
-
-    
 }
