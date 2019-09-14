@@ -1,5 +1,6 @@
 #include <memory>
 #include <random>
+#include <chrono>
 #include <iostream>
 #include <algorithm>
 #include "../header_files/polynomial.hpp"
@@ -37,7 +38,26 @@ int main(int argc, char** argv)
 {
     auto mersenne_twister = get_mersenne_twister();
     auto polynomial = Polynomial(7, mersenne_twister);
-    auto rotational_vault = RotationalVault(5000, 8192, 8192, polynomial, mersenne_twister);
-    auto rotation_pattern = generate_rotation_pattern(32, 84, mersenne_twister);
-    auto vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476}, rotation_pattern);
+    auto rotation_pattern = generate_rotation_pattern(16, 340, mersenne_twister);
+    int vault_size = 5000;
+    int max_layer = 4;
+    int runs = 100000;
+    for(auto counter = 0; counter < runs; counter++)
+    {
+        auto start = std::chrono::system_clock::now();
+        auto fuzzy_vault = FuzzyVault(vault_size, 8192, 8192, polynomial, mersenne_twister);
+        auto vault = fuzzy_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476});
+        auto end = std::chrono::system_clock::now();
+        std::chrono::duration<double> elapsed_seconds = end - start;
+        std::cout << elapsed_seconds.count();
+
+        start = std::chrono::system_clock::now();
+        auto rotational_vault = RotationalVault(vault_size, 8192, 8192, polynomial, mersenne_twister);
+        vault = rotational_vault.lock_vault({6973, 3439, 3406, 2050, 7210, 7495, 7783, 4476}, max_layer, rotation_pattern);
+        end = std::chrono::system_clock::now();
+        elapsed_seconds = end - start;
+        std::cout << ", " << elapsed_seconds.count() << std::endl;
+    }
+
+    
 }

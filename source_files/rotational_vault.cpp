@@ -43,11 +43,11 @@ void RotationalVault::rotate_point(int index, bool clockwise_direction, Coordina
     }
 }
 
-std::vector<Coordinate> RotationalVault::lock_vault(const std::vector<unsigned short>& locking_elements, 
-    std::vector<std::pair<int, bool>> rotation_pattern)
+std::vector<Coordinate> RotationalVault::lock_vault(const std::vector<unsigned short>& locking_elements,
+    int max_layer, std::vector<std::pair<int, bool>> rotation_pattern)
 {
     FuzzyVault::lock_vault(locking_elements);
-    auto quad_tree = QuadTree(this->vault_width, this->vault_height, 3, this->vault_data);
+    auto quad_tree = QuadTree(this->vault_width, this->vault_height, max_layer, this->vault_data);
     this->rotate_vault(quad_tree, rotation_pattern);
     return this->vault_data;
 }
